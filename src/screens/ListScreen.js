@@ -15,12 +15,16 @@ const ListScreen = () => {
     ];
     return (
         <FlatList data={friends} 
-        renderItem={({item})=>{
-            return (
-                <Text>{item.name}</Text>
-            );
-
-        }}>
+            keyExtractor= {
+                (friend)=> friend.name
+            }
+            renderItem={({item})=>{
+                    return (
+                        <Text>{item.name}</Text>
+                    );
+                }
+            }
+        >
         </FlatList>
     );
 };
